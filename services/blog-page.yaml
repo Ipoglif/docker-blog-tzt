@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  blog-page:
+    image: blog-page
+    container_name: blog-page.api
+    environment:
+      - MYSQL_HOST=mysql
+      - MYSQL_PORT=3306
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=123456
+      - MYSQL_DATABASE=blog-mysql
+    ports:
+      - 3000:3000
+    networks:
+    - blog-server
